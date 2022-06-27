@@ -19,15 +19,16 @@
             <a href="" class= "btn btn-primary col-1">back</a>
            
             
-            <input type="text" name="name"  class="form-control" placeholder="name"> 
-            {{-- @error('name')
+            <input type="text" name="name" id="name" class="form-control" placeholder="name"> 
+            @error('name')
             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-            @enderror   --}}
+            @enderror  
 
-           <input type="text" name="title"  class="form-control" placeholder="title">
-             {{-- @error('title')
+            
+           <input type="text" name="title" id="title" class="form-control" placeholder="title">
+             @error('title')
             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-             @enderror    --}}
+             @enderror   
 
 
             <button type="submit" class="  mt-5 btn btn-danger " >click-submit</button>   

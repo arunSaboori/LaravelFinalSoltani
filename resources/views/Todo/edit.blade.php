@@ -21,12 +21,18 @@
            
             
 
-        <input type="text" name="name" value="{{$todo->name}}"  class="form-control"  placeholder="name">  
+        <input type="text" id="name" name="name" value="{{$todo->name}}"  class="form-control"  placeholder="name">  
+        @error('name')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror 
 
 
 
-       <input type="text" name="title" value="{{$todo->title}}" class="form-control"   placeholder="title">  
-            
+       <input type="text" id="title" name="title" value="{{$todo->title}}" class="form-control"   placeholder="title">  
+       @error('title')
+       <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+       @enderror 
+
 
 
 

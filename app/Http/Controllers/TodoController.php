@@ -14,23 +14,41 @@ class TodoController extends Controller
     }      
     
     
+
+
     
     public function store(Request $request){
         Todo::query()->insert([
             'name'=>$request->name,
             'title'=>$request->title
-        ]); 
+        ],$request->validate([
+            'name' => 'required',
+            'title' => 'required',
+        ])); 
      return redirect()->route('todo.index');
     
     }
 
 
-
+    public function update(Request $request){
+        Todo::query()->where('id',$request->id)->update([
+            'name'=>$request->name,
+            'title'=>$request->title
+         ]); 
+            return redirect()->route('todo.index');
+    }
 
     public function create(){
 
     return view('Todo.create');
 
+    }
+
+
+
+    public function edit(Todo $todo){
+
+        return view ('todo.edit',compact('todo'));
     }
 
 
