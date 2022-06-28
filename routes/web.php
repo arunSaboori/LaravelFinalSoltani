@@ -26,7 +26,6 @@ Route::get('/', function () {
 
 //for test crud Enter Url localhost:8000/todo   
 //
-
 //get all query and return the view todo.index
 Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
 
@@ -38,9 +37,7 @@ Route::post('/todo/store', [TodoController::class, 'store'])->name('todo.store')
 
 //return view todo.edit
 Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
-Route::post('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
-
-//update name and title and redircht to todo.index
-Route::post('/todo/update', [TodoController::class, 'update'])->name('todo.update');
+//update
+Route::put('update-student/{id}', [TodoController::class, 'update']);
 // deleting the id 
-Route::get('/todo/delete/{id}',[TodoController::class,'destroy'])->name('todo.delete');
+Route::get('/todo/delete/{id}', [TodoController::class, 'destroy'])->name('todo.delete');

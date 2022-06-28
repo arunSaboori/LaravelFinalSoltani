@@ -14,10 +14,6 @@ class TodoController extends Controller
         return view('Todo.index', compact('todos'));
     }
 
-
-
-
-
     public function store(Request $request)
     {
         Todo::query()->insert([
@@ -29,19 +25,6 @@ class TodoController extends Controller
         ]));
         return redirect()->route('todo.index');
     }
-
-
-
-    public function update(Request $request)
-    {
-        Todo::query()->where('id', $request->id)->update([
-            'name' => $request->name,
-            'title' => $request->title
-        ]);
-        return redirect()->route('todo.index');
-    }
-
-
 
     public function create()
     {
@@ -57,10 +40,19 @@ class TodoController extends Controller
 
     public function destroy($id)
     {
-    $todo =Todo::find($id);
-    $todo->delete();
-    return redirect()->route('todo.index');
-    
+        $todo = Todo::find($id);
+        $todo->delete();
+        return redirect()->route('todo.index');
+    }
 
+    public function update(Request $request, $id)
+    {
+
+
+        $student = Todo::find($id);
+        $student->name = $request->input('name');
+        $student->title = $request->input('title');
+        $student->update();
+        return redirect()->route('todo.index')->with('status', 'Student Updated Successfully');
     }
 }
