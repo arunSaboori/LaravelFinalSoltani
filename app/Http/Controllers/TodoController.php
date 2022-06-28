@@ -48,17 +48,11 @@ class TodoController extends Controller
         return view('Todo.create');
     }
 
-
-
-    
     public function edit(Todo $todo)
     {
 
         return view('todo.edit', compact('todo'));
     }
-
-
-
 
 
     public function destroy($id)

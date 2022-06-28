@@ -27,7 +27,7 @@
     <form action="{{route('todo.index')}}" method="Post">
         @csrf
             
-        <a class="btn btn-primary" href="{{route('todo.edit',$todo->id)}}">Edit</a>
+        <a class="btn btn-primary" href="{{route('todo.edit',[$todo->id])}}">Edit</a>
         <a href="{{route('todo.delete',[$todo->id])}}" class="btn btn-danger">delete</a>
     </form>
     </th>
