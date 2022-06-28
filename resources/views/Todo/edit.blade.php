@@ -12,12 +12,12 @@
 
 
 
-    <form action="{{route('todo.update')}}" method="post">
+    <form action="{{route('todo.update')}}" method="POST">
         @csrf
         <div class=" row container-sm mb-3 mt-lg-4 ms-lg-5 g-4 ">
 
 
-            <a href="" class="btn btn-primary col-1">back</a>
+            <a href="{{route('todo.index')}}" class="btn btn-primary col-1">back</a>
            
             
 

@@ -1,4 +1,4 @@
- {{-- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,34 +9,31 @@
     
 </head>
 <body>
+
+
     <h1 class="container text-primary text-center m-lg-4">todos INDEx</h1>
-
-
-    <a href="" class="btn btn-primary mb-5 ms-lg-4">create data</a>
-
-
+    <a href="{{route('todo.create')}}" class="btn btn-primary mb-5 ms-lg-4" >create data</a>
     <table class="table table-striped ">
-        <tr>
+    <tr>
             <th>name</th>
             <th>title</th>
             <th>action</th>
-        </tr>
-
+    </tr>
    @foreach ($todos as $todo )
     <tr>
     <th>{{$todo->name}}</th>
-    <th>{{$todo->id}}</th>
+    <th>{{$todo->title}}</th>
     <th>
-        <form action="{{route('todo.index')}}" method="Post">
-        <a class="btn btn-primary" href=>Edit</a>
+    <form action="{{route('todo.index')}}" method="Post">
         @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+            
+        <a class="btn btn-primary" href="{{route('todo.edit',$todo->id)}}">Edit</a>
+        <a href="{{route('todo.delete',[$todo->id])}}" class="btn btn-danger">delete</a>
+    </form>
     </th>
-</tr>
+    </tr>
 @endforeach
     </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
-</html> --}}
+</html> --

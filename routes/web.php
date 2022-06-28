@@ -24,14 +24,27 @@ Route::get('/', function () {
 });
 
 
-
-Route::get('/todo',[TodoController::class,'index'])->name('todo.index');
-Route::get('/todo/create',[TodoController::class,'create']);
-Route::post('/todo/store',[TodoController::class,'store'])->name('todo.store');
-Route::get('/todo/{todo}/edit',[TodoController::class,'edit']);
-Route::post('/todo/update',[TodoController::class,'update'])->name('todo.update');
-                                           
- 
+//get all query and return the view todo.index
+Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
 
 
+//return the view todo.create
+Route::get('/todo/create', [TodoController::class, 'create'])->name('todo.create');
 
+
+//insert va validation and redircht todo.index
+Route::post('/todo/store', [TodoController::class, 'store'])->name('todo.store');
+
+
+//return view todo.edit
+Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
+Route::post('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
+
+
+//update name and title and redircht to todo.index
+Route::post('/todo/update', [TodoController::class, 'update'])->name('todo.update');
+
+
+
+
+Route::get('/todo/delete/{id}',[TodoController::class,'destroy'])->name('todo.delete');
