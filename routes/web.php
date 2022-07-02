@@ -37,7 +37,9 @@ Route::post('/todo/store', [TodoController::class, 'store'])->name('todo.store')
 
 //return view todo.edit
 Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
+
 //update
-Route::put('update-student/{id}', [TodoController::class, 'update']);
+Route::post('/todo/update/{todo}', [TodoController::class, 'update'])->name('todo.update');
+
 // deleting the id 
 Route::get('/todo/delete/{id}', [TodoController::class, 'destroy'])->name('todo.delete');

@@ -13,7 +13,7 @@ class TodoController extends Controller
         $todos = Todo::query()->get()->all();
         return view('Todo.index', compact('todos'));
     }
-
+                      
     public function store(Request $request)
     {
         Todo::query()->insert([
@@ -31,28 +31,30 @@ class TodoController extends Controller
         return view('Todo.create');
     }
 
-    public function edit(Todo $todo)
-    {
-
-        return view('todo.edit', compact('todo'));
-    }
-
-
+    
+    
     public function destroy($id)
     {
         $todo = Todo::find($id);
         $todo->delete();
         return redirect()->route('todo.index');
     }
-
-    public function update(Request $request, $id)
+    
+    public function update(Request $request, $todo)
     {
-
-
-        $student = Todo::find($id);
+        
+        
+        $student = Todo::find($todo);
         $student->name = $request->input('name');
         $student->title = $request->input('title');
         $student->update();
         return redirect()->route('todo.index')->with('status', 'Student Updated Successfully');
     }
+
+    
+          public function edit(Todo $todo)
+   {
+
+       return view('todo.edit', compact('todo'));
+}
 }

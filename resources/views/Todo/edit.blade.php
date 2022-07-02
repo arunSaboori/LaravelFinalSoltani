@@ -13,9 +13,8 @@
 
 
 
-    <form action="{{ url('update-student/' . $todo->id) }}" method="POST">
+    <form action="{{ route('todo.update' ,[$todo->id] )}}" method="POST">
         @csrf
-        @method('PUT')
         <div class=" row container-sm mb-3 mt-lg-4 ms-lg-5 g-4 ">
 
 
