@@ -46,3 +46,7 @@ Route::get('/todo/delete/{id}', [TodoController::class, 'destroy'])->name('todo.
 
 //get item from teable
 Route::get('/todo/item',[TodoController::class,'getitem'])->name('todo.item');
+
+
+//sumit the the time 
+Route::get('/todo/SubmitTime',[TodoController::class,'SubmitTime'])->name('todo.time');

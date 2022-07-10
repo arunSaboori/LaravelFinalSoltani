@@ -16,9 +16,15 @@
     <form action="{{ route('todo.update' ,[$todo->id] )}}" method="POST">
         @csrf
         <div class=" row container-sm mb-3 mt-lg-4 ms-lg-5 g-4 ">
-
-
             <a href="{{ route('todo.index') }}" class="btn btn-primary col-1">back</a>
+
+
+
+
+
+
+
+
 
 
 
@@ -44,11 +50,16 @@
 
 
 
-            <input type="text" id="created_at" name="created_at" value="{{ $todo->created_at }}" class="form-control"
-            >
-        @error('created_at')
+            {{-- <input type="text" id="created_at" name="created_at" value="{{ $todo->created_at }}" class="form-control"
+            > --}}
+        {{-- @error('created_at')
             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-        @enderror
+        @enderror --}}
+
+            {{-- <input type="text" id="updated_at" name="updated_at" value="{{ $todo->updated_at }}" class="form-control"> --}}
+        {{-- @error('updated_at')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror --}}
 
 
 

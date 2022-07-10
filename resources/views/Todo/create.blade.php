@@ -36,10 +36,15 @@
              @enderror 
              
              
-           <input type="text" name="created_at" id="created_at" class="form-control" placeholder="created_at">
-             @error('created_at')
+           {{-- <input type="text" name="created_at" id="created_at" class="form-control" placeholder="created_at"> --}}
+             {{-- @error('created_at')
             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-             @enderror   
+             @enderror    --}}
+
+           {{-- <input type="text" name="updated_at" id="updated_at" class="form-control" placeholder="updated_at"> --}}
+             {{-- @error('created_at')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+             @enderror    --}}
 
 
             <button type="submit" class="  mt-5 btn btn-danger " >click-submit</button>   

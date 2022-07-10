@@ -19,8 +19,9 @@ return new class extends Migration
             $table->longtext('description');
             $table->string('grouping');
             $table->timestamp('created_at')->useCurrent();
-
-        });
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
+            // $table->timestamps();
+          });
 
     }
 
