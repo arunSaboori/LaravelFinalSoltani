@@ -16,21 +16,26 @@
       <table class="table table-striped ">
 
           <tr>
-              <th>name</th>
               <th>title</th>
+              <th>description</th>
+              <th>grouping</th>
+              <th>created at</th>
               <th>action</th>
           </tr>
 
           @foreach ($todos as $todo)
               <tr>
-                  <th>{{ $todo->name }}</th>
                   <th>{{ $todo->title }}</th>
+                  <th>{{ $todo->description }}</th>
+                  <th>{{ $todo->grouping }}</th>
+                  <th>{{ $todo->created_at }}</th>
                   <th>
                       <form action="{{ route('todo.index') }}" method="Post">
                           @csrf
 
                           <a class="btn btn-primary" href="{{ route('todo.edit', [$todo->id]) }}">Edit</a>
                           <a href="{{ route('todo.delete', [$todo->id]) }}" class="btn btn-danger">delete</a>
+                          <a href="" class="btn btn-dark">done</a>
                       </form>
                   </th>
               </tr>

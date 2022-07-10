@@ -43,3 +43,6 @@ Route::post('/todo/update/{todo}', [TodoController::class, 'update'])->name('tod
 
 // deleting the id 
 Route::get('/todo/delete/{id}', [TodoController::class, 'destroy'])->name('todo.delete');
+
+//get item from teable
+Route::get('/todo/item',[TodoController::class,'getitem'])->name('todo.item');

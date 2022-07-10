@@ -18,22 +18,24 @@ class TodoSeeder extends Seeder
         DB::table("todos")->insert([
             [
                 'id' =>1,
-                'name' => 'test 13',
-                'title' => 'test 122',
+                'title' => 'sony',
+                'description' => 'tv 350cm',
+                'grouping' => 'tv',
             ],
             [
                 'id' =>2,
-                'name' => 'saboori',
-                'title' => 'nima',
-
+                'title' => 'samsung',
+                'description' => 'tv 100cm',
+                'grouping' => 'tv',
 
             ],
             [
                 'id' =>3,
-                'name' => 'reza',
-                'title' => 'test 12',
+                'title' => 'LG',
+                'description' => 'tv 300cm',
+                'grouping' => 'tv',
 
-            ],
+             ],
             ]);
 
     }

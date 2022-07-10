@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('todos',function(Blueprint $table){
             $table->id();
-            $table->string('name');
             $table->string('title');
-            $table->timestamps();
+            $table->longtext('description');
+            $table->string('grouping');
+            $table->timestamp('created_at')->useCurrent();
+
         });
 
     }

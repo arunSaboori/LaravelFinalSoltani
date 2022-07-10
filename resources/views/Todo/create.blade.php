@@ -19,14 +19,25 @@
             <a href="{{route('todo.index')}}" class= "btn btn-primary col-1">back</a>
            
             
-            <input type="text" name="name" id="name" class="form-control" placeholder="name"> 
-            @error('name')
+            <input type="text" name="title" id="title" class="form-control" placeholder="title"> 
+            @error('title')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+            @enderror  
+            
+            <input type="text" name="description" id="description" class="form-control" placeholder="description"> 
+            @error('description')
             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
             @enderror  
 
             
-           <input type="text" name="title" id="title" class="form-control" placeholder="title">
-             @error('title')
+           <input type="text" name="grouping" id="grouping" class="form-control" placeholder="grouping">
+             @error('grouping')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+             @enderror 
+             
+             
+           <input type="text" name="created_at" id="created_at" class="form-control" placeholder="created_at">
+             @error('created_at')
             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
              @enderror   
 
@@ -37,7 +48,7 @@
     
     
     
-    
+    `
     
     
     

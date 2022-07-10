@@ -22,19 +22,33 @@
 
 
 
-            <input type="text" id="name" name="name" value="{{ $todo->name }}" class="form-control"
-                placeholder="name">
-            @error('name')
-                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-            @enderror
-
-
-
             <input type="text" id="title" name="title" value="{{ $todo->title }}" class="form-control"
-                placeholder="title">
+                >
             @error('title')
                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
             @enderror
+
+
+            <input type="text" id="description" name="description" value="{{ $todo->description }}" class="form-control"
+                >
+            @error('description')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+            @enderror
+
+
+            <input type="text" id=" grouping" name="grouping" value="{{ $todo->grouping }}" class="form-control"
+                >
+            @error('grouping')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+            @enderror
+
+
+
+            <input type="text" id="created_at" name="created_at" value="{{ $todo->created_at }}" class="form-control"
+            >
+        @error('created_at')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
 
 
 

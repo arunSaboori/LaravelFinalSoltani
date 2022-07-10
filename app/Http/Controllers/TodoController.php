@@ -2,26 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
+
+
+
+
+
+
     public function index()
     {
-
         $todos = Todo::query()->get()->all();
         return view('Todo.index', compact('todos'));
     }
+
+
+
+
+
                       
     public function store(Request $request)
     {
         Todo::query()->insert([
-            'name' => $request->name,
-            'title' => $request->title
+            'title' => $request->title,
+            'description' => $request->description,
+            'grouping' => $request->grouping,
         ], $request->validate([
-            'name' => 'required',
             'title' => 'required',
+            'description' => 'required',
+            'grouping' => 'required',
         ]));
         return redirect()->route('todo.index');
     }
@@ -43,11 +56,11 @@ class TodoController extends Controller
     public function update(Request $request, $todo)
     {
         
-        
-        $student = Todo::find($todo);
-        $student->name = $request->input('name');
-        $student->title = $request->input('title');
-        $student->update();
+        $todos = Todo::find($todo);
+        $todos->title = $request->input('title');
+        $todos->description = $request->input('description');
+        $todos->grouping = $request->input('grouping');
+         $todos->update();
         return redirect()->route('todo.index')->with('status', 'Student Updated Successfully');
     }
 
@@ -57,4 +70,21 @@ class TodoController extends Controller
 
        return view('todo.edit', compact('todo'));
 }
+
+
+public function getitem(){
+
+$item = Todo::query()->get()->all();
+return view('todo.item',compact('item'));
+
+}
+
+
+public function SubmitTime(){
+$item= Carbon::now();
+
+return view('Todo.index');
+}
+
+
 }
