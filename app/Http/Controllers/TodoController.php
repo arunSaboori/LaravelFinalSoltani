@@ -24,7 +24,7 @@ class TodoController extends Controller
 
 
 
-                      
+
     public function store(Request $request)
     {
         Todo::query()->insert([
@@ -44,18 +44,18 @@ class TodoController extends Controller
         return view('Todo.create');
     }
 
-    
-    
+
+
     public function destroy($id)
     {
         $todo = Todo::find($id);
         $todo->delete();
         return redirect()->route('todo.index');
     }
-    
+
     public function update(Request $request, $todo)
     {
-        
+
         $todos = Todo::find($todo);
         $todos->title = $request->input('title');
         $todos->description = $request->input('description');
@@ -64,7 +64,7 @@ class TodoController extends Controller
         return redirect()->route('todo.index')->with('status', 'Student Updated Successfully');
     }
 
-    
+
           public function edit(Todo $todo)
    {
 
@@ -80,10 +80,16 @@ return view('todo.item',compact('item'));
 }
 
 
-public function SubmitTime(){
-$item= Carbon::now();
+public function search(Request $request){
 
-return view('Todo.index');
+    $search = $request->input('search');
+
+    $posts = Todo::query()
+                ->where('title', 'LIKE', "%{$search}%")
+                ->get();
+
+                return view('todo.search', compact('posts'));
+
 }
 
 

@@ -11,10 +11,14 @@
 
 </head>
 <body>
-    <header >
+    <header class="navbar navbar-expand-lg bg-warning p-5 ">
          <ul>
-            <li><a href="{{ route('todo.create')}}">create todolist</a></li>
-            <li><a href="{{route('todo.index')}}">manage todolist</a></li>
+            <li class="m-5"><a href="{{route('todo.create')}}">create todolist</a></li>
+            <li class="m-5"><a href="{{route('todo.index')}}">manage todolist</a></li>
+            <form action="{{ route('todo.search') }}" class="m-5" method="GET">
+            <input type="search" name="search" placeholder="search-By-Title">
+            <button type="submit" class="btn btn-primary">submit</button>
+            </form>
         </ul>
     </header>
 
@@ -24,10 +28,10 @@
 
 <p class="first-div">
     @foreach ($item as $items )
-    <span> 
-     <a href=""> {{$items->title}}   </a>   
-     <a href=""> {{$items->description}}</a>    
-     <a href="">{{$items->grouping}}</a>    
+    <span>
+     <a href=""> {{$items->title}}   </a>
+     <a href=""> {{$items->description}}</a>
+     <a href="">{{$items->grouping}}</a>
     </span>
     @endforeach
 </p>

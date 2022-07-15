@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 
-//for test crud Enter Url localhost:8000/todo   
+//for test crud Enter Url localhost:8000/todo
 //
 //get all query and return the view todo.index
 Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
@@ -41,12 +41,11 @@ Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edi
 //update
 Route::post('/todo/update/{todo}', [TodoController::class, 'update'])->name('todo.update');
 
-// deleting the id 
+// deleting the id
 Route::get('/todo/delete/{id}', [TodoController::class, 'destroy'])->name('todo.delete');
 
 //get item from teable
 Route::get('/todo/item',[TodoController::class,'getitem'])->name('todo.item');
 
-
-//sumit the the time 
-Route::get('/todo/SubmitTime',[TodoController::class,'SubmitTime'])->name('todo.time');
+// search navbar
+Route::get('todo/search',[TodoController::class,'search'])->name('todo.search');
