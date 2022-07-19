@@ -50,17 +50,6 @@
 
 
 
-            {{-- <input type="text" id="created_at" name="created_at" value="{{ $todo->created_at }}" class="form-control"
-            > --}}
-        {{-- @error('created_at')
-            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-        @enderror --}}
-
-            {{-- <input type="text" id="updated_at" name="updated_at" value="{{ $todo->updated_at }}" class="form-control"> --}}
-        {{-- @error('updated_at')
-            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-        @enderror --}}
-
 
 
 
