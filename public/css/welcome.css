@@ -1,0 +1,21 @@
+*{
+
+background-image: url(../img/fist.jpg);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+list-style: none;
+text-decoration: none;
+}
+
+
+
+.h1{
+
+display: flex;
+justify-content: center;
+margin-top: 15rem;
+font-size: 30px;
+color: aliceblue;
+}
+.h1:hover{
+    color: red;
+}
