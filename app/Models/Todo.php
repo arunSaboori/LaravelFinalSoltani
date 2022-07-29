@@ -9,5 +9,4 @@ class Todo extends Model
 {
     use HasFactory;
 
-
 }

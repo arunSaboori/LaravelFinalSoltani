@@ -55,11 +55,15 @@ class TodoController extends Controller
 
     public function update(Request $request, $todo)
     {
-
         $todos = Todo::find($todo);
         $todos->title = $request->input('title');
         $todos->description = $request->input('description');
         $todos->grouping = $request->input('grouping');
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'grouping' => 'required',
+        ]);
          $todos->update();
         return redirect()->route('todo.index')->with('status', 'Student Updated Successfully');
     }
@@ -67,6 +71,7 @@ class TodoController extends Controller
 
           public function edit(Todo $todo)
    {
+
 
        return view('todo.edit', compact('todo'));
 }
