@@ -7,8 +7,10 @@
 
 
 header{
-    background-color: burlywood;
-    padding:1rem 5rem
+    background: url(../img/fist.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px 30px;
 }
 
 
